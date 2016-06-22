@@ -56,6 +56,7 @@ public class Main {
         // 7) Complete the printInventoryList() method below and call it with different numbers of inputs
         printInventory("baseball cap", "cowboy hat", "fedora");
         printInventory("Nexus 5X", "Samsung S7", "iPhone 6S", "Nexus 6P", "One Plus 3", "Moto X");
+
     }
 
 
@@ -67,6 +68,7 @@ public class Main {
     public static void setStoreName(String name) {
         // update the value of mStoreName, then explain in a comment why you can access that variable
         // from within the scope of this method, since mStoreName is NOT local to this method.
+        mStoreName = name;
     }
 
 
@@ -81,6 +83,7 @@ public class Main {
      */
     public static String greetCustomer(String customerName) {
         // do some concatenation and return the result
+        return "Hi " + customerName + ", welcome to " + mStoreName;
     }
 
 
@@ -94,6 +97,7 @@ public class Main {
      */
     public static double getSalePrice(double fullPrice, double discount) {
         // do some math and return the sale price
+        return fullPrice * (1.0 - discount);
     }
 
 
@@ -110,6 +114,7 @@ public class Main {
 
         // hint - consider the DRY principle: Don't Repeat Yourself!
         // can you use the getSalePrice() method here to avoid repeating logic you've already written?
+        return getSalePrice(fullPrice, discount) * 0.5;
     }
 
 
@@ -131,6 +136,7 @@ public class Main {
     public static double getBulkDiscount(int quantityPurchased) {
         // there are multiple ways to do this - we discussed a situation where the remainder from
         // division is truncated (removed). Can you use that to help you here?
+        return (quantityPurchased / 5) * 0.05;
     }
 
 
@@ -144,5 +150,8 @@ public class Main {
         // In order to print each item you'll need to loop through all the items.
         // We haven't covered loops yet, so challenge yourself to figure it out by googling.
         // If you don't get it, no worries! We'll cover loops tomorrow.
+        for (String item: items) {
+            System.out.println(item);
+        }
     }
 }
